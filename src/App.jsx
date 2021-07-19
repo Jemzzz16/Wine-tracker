@@ -1,12 +1,18 @@
 import './App.module.scss';
+import Routes from './Containers/Routes/Routes';
 import Login from './Containers/Login/Login';
-
-import { Link } from "react-router-dom";
+import UserProvider from './Context/UserProvider/UserProvider';
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Login />
+      <UserProvider>
+        <Router>
+          <Login />
+          <Routes />
+        </Router>
+      </UserProvider>
     </>
   );
 }
